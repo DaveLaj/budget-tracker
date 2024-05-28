@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"os"
 
-	"github.com/DaveLaj/dateExercise/database"
+	"github.com/DaveLaj/budget-tracker/database"
 )
 
 type Config = database.Config

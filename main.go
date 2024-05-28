@@ -6,8 +6,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/DaveLaj/dateExercise/database"
-	// "github.com/DaveLaj/dateExercise/cmd"
+	"github.com/DaveLaj/budget-tracker/database"
+	// "github.com/DaveLaj/budget-tracker/cmd"
 )
 
 func main() {

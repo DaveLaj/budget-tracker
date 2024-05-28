@@ -1,4 +1,4 @@
-module github.com/DaveLaj/dateExercise
+module github.com/DaveLaj/budget-tracker
 
 go 1.22.2
 
