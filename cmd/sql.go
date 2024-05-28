@@ -4,7 +4,6 @@ Copyright © 2024 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
-	_ "database/sql"
 	"fmt"
 
 	"github.com/DaveLaj/budget-tracker/database"
@@ -33,8 +32,13 @@ and usage of using your command.`,
 		}
 		defer db.Close()
 
+		err = db.Ping()
+		if err != nil {
+			fmt.Println("Error pinging the database")
+			return
+		}
 		// This is where the code for the sql command will go
-
+		// create table example
 		table, err := db.Query("CREATE TABLE IF NOT EXISTS expenses (id SERIAL PRIMARY KEY, name TEXT, amount FLOAT, date DATE);")
 		if err != nil {
 			fmt.Println("Error creating table")

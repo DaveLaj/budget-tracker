@@ -32,6 +32,10 @@ func CreateDBConnection(cfg Config, dbName string) (*sql.DB, error) {
 	if err != nil {
 		return nil, err
 	}
+	err = db.Ping()
+	if err != nil {
+		return nil, err
+	}
 	fmt.Println("Connected to database")
 	return db, nil
 }
