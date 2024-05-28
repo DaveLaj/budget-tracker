@@ -3,7 +3,11 @@ package main
 import (
 	"encoding/json"
 	"os"
+
+	"github.com/DaveLaj/dateExercise/database"
 )
+
+type Config = database.Config
 
 func LoadConfig() (Config, error) {
 	var cfg Config

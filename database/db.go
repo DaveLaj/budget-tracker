@@ -1,4 +1,4 @@
-package main
+package database
 
 import (
 	"database/sql"
@@ -6,6 +6,13 @@ import (
 
 	"github.com/go-sql-driver/mysql"
 )
+
+type Config struct {
+	DB_USER     string
+	DB_HOST     string
+	DB_PASSWORD string
+	DB_PORT     int
+}
 
 func CreateDBConnection(cfg Config, dbName string) (*sql.DB, error) {
 	var db *sql.DB
