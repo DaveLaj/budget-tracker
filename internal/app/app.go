@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/DaveLaj/budget-tracker/database"
 	"github.com/DaveLaj/budget-tracker/internal/utils"
 )
 
@@ -16,12 +17,15 @@ func Start() {
 	}
 	defer file.Close()
 
-	log.SetOutput(file) // Redirect log output to file
-
 	DBConfig, err := utils.LoadConfig()
 	if err != nil {
 		log.Fatalf("Error loading config: %v", err)
 	}
 
-	log.Printf("Config: %+v", DBConfig)
+	err = database.InitializeDB(DBConfig, "budget_tracker")
+	if err != nil {
+		log.Fatalf("Error initializing database: %v", err)
+	}
+
+	log.SetOutput(file) // Redirect log output to fil
 }

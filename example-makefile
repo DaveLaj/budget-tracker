@@ -1,0 +1,17 @@
+MIGRATIONS_DIR = ./migrations
+DSN = '' # Connection String to mysql database
+
+lint:
+	golangci-lint run --sort-results --show-stats --allow-parallel-runners
+
+run: lint
+	go run cmd/main/main.go
+
+build: lint
+	go build -o cmd/bin/main.exe cmd/main/main.go
+
+migration-up:
+	goose -dir $(MIGRATIONS_DIR) mysql $(DSN) up
+
+migration-down:
+	goose -dir $(MIGRATIONS_DIR) mysql $(DSN) down-to 00000
