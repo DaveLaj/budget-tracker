@@ -1,3 +1,6 @@
 log.txt
 Makefile
 config.json
+bin/*
+node_modules
+.exe
