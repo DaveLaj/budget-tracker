@@ -1,7 +1,10 @@
 package templates
 
-import "github.com/DaveLaj/budget-tracker/internal/templates/components"
+import (
+	"github.com/DaveLaj/budget-tracker/internal/persistence"
+	"github.com/DaveLaj/budget-tracker/internal/templates/components"
+)
 
-templ Page() {
-	@components.PageLayout()
+templ Page(records *[]persistence.Record) {
+	@components.PageLayout(records)
 }

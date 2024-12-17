@@ -32,6 +32,9 @@ func Start() {
 	}
 
 	r := gin.Default()
+
+	r.Static("/static", "./assets")
+
 	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"message": "pong",

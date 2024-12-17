@@ -1,10 +1,12 @@
 package components
 
-templ PageLayout() {
+import "github.com/DaveLaj/budget-tracker/internal/persistence"
+
+templ PageLayout(records *[]persistence.Record) {
 	<!DOCTYPE html>
 	<html lang="en">
 		@header()
-		@body()
+		@body(records)
 		@footer()
 	</html>
 }

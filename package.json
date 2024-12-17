@@ -1,5 +1,18 @@
 {
   "devDependencies": {
-    "esbuild": "0.24.0"
-  }
+    "autoprefixer": "^10.4.20",
+    "esbuild": "0.24.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16"
+  },
+  "name": "budget-tracker",
+  "version": "1.0.0",
+  "description": "- Go 1.23.1\r - MySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
