@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/DaveLaj/budget-tracker/internal/controllers"
 	"github.com/DaveLaj/budget-tracker/internal/database"
 	"github.com/DaveLaj/budget-tracker/internal/utils"
 	"github.com/gin-gonic/gin"
@@ -37,7 +38,9 @@ func Start() {
 		})
 	})
 
-	err = r.Run()
+	r.GET("/budgetpage", controllers.ShowPage)
+
+	err = r.Run(":6969")
 	if err != nil {
 		log.Fatalf("Error running server: %v", err)
 	}

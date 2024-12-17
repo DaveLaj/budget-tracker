@@ -23,7 +23,6 @@ func InsertItem(item Item) error {
 	return nil
 }
 
-func getAllItems() (Item, error) {
-
+func GetAllItems() (Item, error) {
 	return Item{}, nil
 }
